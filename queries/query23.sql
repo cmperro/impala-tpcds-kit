@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query23.tpl using seed 2031708268
 with frequent_ss_items as 
  (select substr(i_item_desc,1,30) itemdesc,i_item_sk item_sk,d_date solddate,count(*) cnt

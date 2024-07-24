@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query84.tpl using seed 1819994127
 select  c_customer_id as customer_id
        , coalesce(c_last_name,'') || ', ' || coalesce(c_first_name,'') as customername

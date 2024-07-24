@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query88.tpl using seed 318176889
 select  *
 from

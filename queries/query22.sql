@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query22.tpl using seed 1200409435
 select  i_product_name
              ,i_brand

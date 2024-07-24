@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query18.tpl using seed 1978355063
 select  i_item_id,
         ca_country,

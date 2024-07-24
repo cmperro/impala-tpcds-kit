@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query45.tpl using seed 2031708268
 select  ca_zip, ca_county, sum(ws_sales_price)
  from web_sales, customer, customer_address, date_dim, item

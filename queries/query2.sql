@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query2.tpl using seed 1200409435
 with wscs as
  (select sold_date_sk

@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query16.tpl using seed 1971067816
 select  
    count(distinct cs_order_number) as "order count"

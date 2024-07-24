@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query83.tpl using seed 1930872976
 with sr_items as
  (select i_item_id item_id,

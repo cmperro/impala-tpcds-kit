@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query91.tpl using seed 1930872976
 select  
         cc_call_center_id Call_Center,

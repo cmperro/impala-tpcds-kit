@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query51.tpl using seed 1200409435
 WITH web_v1 as (
 select

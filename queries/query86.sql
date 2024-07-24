@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query86.tpl using seed 1200409435
 select   
     sum(ws_net_paid) as total_sum

@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query54.tpl using seed 1930872976
 with my_customers as (
  select distinct c_customer_sk

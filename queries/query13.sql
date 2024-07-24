@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query13.tpl using seed 1937078288
 select avg(ss_quantity)
        ,avg(ss_ext_sales_price)

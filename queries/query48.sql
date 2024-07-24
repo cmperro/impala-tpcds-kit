@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query48.tpl using seed 622697896
 select sum (ss_quantity)
  from store_sales, store, customer_demographics, customer_address, date_dim

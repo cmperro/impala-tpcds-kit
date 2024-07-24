@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query41.tpl using seed 1581015815
 select  distinct(i_product_name)
  from item i1

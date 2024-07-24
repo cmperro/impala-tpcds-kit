@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query72.tpl using seed 2031708268
 select  i_item_desc
       ,w_warehouse_name

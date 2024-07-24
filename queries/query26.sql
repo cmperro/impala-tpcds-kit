@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query26.tpl using seed 1930872976
 select  i_item_id, 
         avg(cs_quantity) agg1,

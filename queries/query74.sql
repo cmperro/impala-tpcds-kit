@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query74.tpl using seed 1556717815
 with year_total as (
  select c_customer_id customer_id

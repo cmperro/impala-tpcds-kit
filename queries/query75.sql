@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query75.tpl using seed 1819994127
 WITH all_sales AS (
  SELECT d_year

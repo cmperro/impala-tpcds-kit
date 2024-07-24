@@ -1,3 +1,4 @@
+use ${var:DB};
 -- start query 1 in stream 0 using template query95.tpl using seed 2031708268
 with ws_wh as
 (select ws1.ws_order_number,ws1.ws_warehouse_sk wh1,ws2.ws_warehouse_sk wh2
