@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workflow-app xmlns='uri:oozie:workflow:0.4' name='TPCDS Data Generation'>
+    <start to='java-action' />
+    
+ <action name="java-action">
+     <java>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <main-class>org.notmysock.tpcds.GenTable</main-class>
+            <arg>-d</arg>
+            <arg>s3a://${bucket}/data/tpcds_${scale}_text</arg>
+            <arg>-p</arg>
+            <arg>10</arg>
+            <arg>-s</arg>
+            <arg>${scale}</arg>
+       </java>
+       <ok to="hdfscommands"/>
+       <error to="java-action-fail"/>
+    </action>
+    <action name="hdfscommands">
+        <fs>
+           <delete path='s3a://${bucket}/data/tpcds_${scale}_text'/>
+       </fs>
+       <ok to="end"/>
+       <error to="errorcleanup"/>
+   </action>
+    <kill name="java-action-fail">
+        <message>Java action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <kill name="errorcleanup">
+        <message>FS action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    
+    <end name='end' />
+</workflow-app>
