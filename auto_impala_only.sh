@@ -5,7 +5,7 @@ password=''
 dm_knox_host=""
 dm_impala_path=""
 spark_database="tpcds_10_text_hive"
-impala_database="tpcds_10_parquet"
+impala_database="tpcds_100_parquet"
 hive_database="tpcds_10_orc"
 
 for i in {1..2000}
