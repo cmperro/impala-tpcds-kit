@@ -4,6 +4,7 @@ users=( joe_analyst_0 ivanna_hr john_finance_0 ivanna_eu_hr_0 john_end_user jim_
 password=''
 dm_knox_host=""
 dm_impala_path=""
+cdw_jdbc=""
 spark_database="tpcds_10_text_hive"
 impala_database="tpcds_10_parquet"
 hive_database="tpcds_10_orc"
@@ -18,14 +19,14 @@ do
    if [ $selected_host_number == 1 ]
    then
       echo "Hive"
-      cd /home/cperro/hive-testbench; echo $password | kinit $selected_user; bash run_some_hive_queries.sh $hive_database cdw $selected_user $password
+      cd /home/cperro/hive-testbench; echo $password | kinit $selected_user; bash run_some_hive_queries.sh $hive_database cdw $cdw_jdbc $selected_user $password
    elif [ $selected_host_number == 2 ] 
    then
       echo "Spark"
       #cd /home/cperro/hive-testbench; echo $password | kinit $selected_user; spark3-submit run_some_spark_queries.py $query_num $spark_database
    else
       echo "Impala"
-      cd /home/cperro/impala-tpcds-kit; bash run_some_impala_queries.sh $password $dm_knox_host $dm_impala_path $impala_database $selected_user
+      cd /home/cperro/impala-tpcds-kit; bash run_some_impala_queries.sh $password $dm_knox_host $dm_impala_path $impala_database cdw $selected_user
    fi
    
 
