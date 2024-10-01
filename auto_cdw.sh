@@ -6,8 +6,8 @@ dm_knox_host=""
 dm_impala_path=""
 cdw_jdbc=""
 spark_database="tpcds_10_text_hive"
-impala_database="tpcds_10_parquet"
-hive_database="tpcds_10_orc"
+impala_database="tpcds_500_parquet"
+hive_database="tpcds_500_orc"
 
 for i in {1..2000}
 do
@@ -26,7 +26,7 @@ do
       #cd /home/cperro/hive-testbench; echo $password | kinit $selected_user; spark3-submit run_some_spark_queries.py $query_num $spark_database
    else
       echo "Impala"
-      cd /home/cperro/impala-tpcds-kit; bash run_some_impala_queries.sh $password $dm_knox_host $dm_impala_path $impala_database cdw $selected_user
+      cd /home/cperro/impala-tpcds-kit; bash run_some_impala_queries.sh $password $dm_knox_host $selected_user $impala_database cdw $dm_impala_path
    fi
    
 
