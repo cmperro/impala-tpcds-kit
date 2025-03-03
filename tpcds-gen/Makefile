@@ -9,8 +9,7 @@ target/tpcds_kit.zip: tpcds_kit.zip
 	cp tpcds_kit.zip target/tpcds_kit.zip
 
 tpcds_kit.zip:
-	curl http://public-repo-1.hortonworks.com/hive-testbench/tpcds/README
-	curl --output tpcds_kit.zip http://public-repo-1.hortonworks.com/hive-testbench/tpcds/TPCDS_Tools.zip
+	curl -LJ --output tpcds_kit.zip https://raw.githubusercontent.com/cmperro/impala-tpcds-kit/main/tpcds-gen/TPCDS_Tools.zip
 
 target/lib/dsdgen.jar: target/tools/dsdgen
 	cd target/; mkdir -p lib/; ( jar cvf lib/dsdgen.jar tools/ || gjar cvf lib/dsdgen.jar tools/ )
